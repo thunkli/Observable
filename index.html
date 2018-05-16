@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Observable</title>
+</head>
+
+<body>
+<input type="text" value="" title="test">
+<script src="src/observable.js"></script>
+<script>
+    // Grab input element
+    const input = document.querySelector('input');
+
+    // Create Observable
+    Observable.fromEvent(input, 'input')
+        .map(event => event.target.value)
+        .subscribe(event => console.log(event))
+</script>
+</body>
+
+</html>
